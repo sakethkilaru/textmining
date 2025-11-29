@@ -76,27 +76,47 @@ class OpenAIClient(BaseLLMClient):
             response = self.client.chat.completions.create(
                 model=self.model_name,
                 messages=[
-                    {"role": "system", "content": "You are a financial analyst assistant. Provide accurate, concise answers."},
+                    {"role": "system", "content": "You are a financial analyst assistant. Provide accurate, concise answers based on the provided context. If context is provided, use ONLY that context to answer. Keep answers brief - 2-3 sentences maximum."},
                     {"role": "user", "content": prompt}
                 ],
-                #temperature=0.1,
-                max_completion_tokens=500
+                max_completion_tokens=16000,  # Increased significantly to account for thinking tokens
+                
             )
             latency_ms = (time.time() - start_time) * 1000
             
             input_tokens = response.usage.prompt_tokens
             output_tokens = response.usage.completion_tokens
             
+            # Handle potential empty or refused responses
+            answer = ""
+            if response.choices and len(response.choices) > 0:
+                choice = response.choices[0]
+                
+                # Check finish reason
+                finish_reason = getattr(choice, 'finish_reason', None)
+                
+                if choice.message and choice.message.content:
+                    answer = choice.message.content.strip()
+                elif finish_reason == 'content_filter':
+                    answer = "[Response filtered by content moderation]"
+                elif finish_reason == 'length':
+                    answer = "[Response truncated - max tokens reached]"
+                else:
+                    answer = f"[Empty response - finish_reason: {finish_reason}]"
+            else:
+                answer = "[No choices returned from API]"
+            
             pricing = self.PRICING.get(self.model_name, {"input": 10.0, "output": 30.0})
             cost = (input_tokens * pricing["input"] + output_tokens * pricing["output"]) / 1_000_000
             
             return LLMResponse(
                 model=self.model_name,
-                answer=response.choices[0].message.content.strip(),
+                answer=answer,
                 input_tokens=input_tokens,
                 output_tokens=output_tokens,
                 latency_ms=latency_ms,
-                cost_usd=cost
+                cost_usd=cost,
+                error=None if answer and not answer.startswith("[") else answer
             )
         except Exception as e:
             return LLMResponse(
@@ -152,6 +172,75 @@ class AnthropicClient(BaseLLMClient):
                 output_tokens=output_tokens,
                 latency_ms=latency_ms,
                 cost_usd=cost
+            )
+        except Exception as e:
+            return LLMResponse(
+                model=self.model_name,
+                answer="",
+                input_tokens=0,
+                output_tokens=0,
+                latency_ms=(time.time() - start_time) * 1000,
+                cost_usd=0,
+                error=str(e)
+            )
+
+
+class GroqClient(BaseLLMClient):
+    """Groq client wrapper for open-source models (Llama, Mixtral)."""
+    
+    # Pricing per 1M tokens (Groq - FREE tier, Nov 2025)
+    PRICING = {
+        "llama-3.3-70b-versatile": {"input": 0.00, "output": 0.00},
+        "llama-3.1-8b-instant": {"input": 0.00, "output": 0.00},
+        "qwen/qwen3-32b": {"input": 0.00, "output": 0.00},
+    }
+    
+    def __init__(self, model_name: str = "llama-3.3-70b-versatile", api_key: str = None):
+        super().__init__(model_name, api_key)
+        from groq import Groq
+        self.client = Groq(api_key=api_key)
+    
+    def query(self, question: str, context: Optional[str] = None) -> LLMResponse:
+        prompt = self._build_prompt(question, context)
+        
+        start_time = time.time()
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=[
+                    {"role": "system", "content": "You are a financial analyst assistant. Provide accurate, concise answers based on the provided context. If context is provided, use ONLY that context to answer. Keep answers brief."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.1,
+                max_tokens=1000
+            )
+            latency_ms = (time.time() - start_time) * 1000
+            
+            input_tokens = response.usage.prompt_tokens
+            output_tokens = response.usage.completion_tokens
+            
+            answer = ""
+            if response.choices and len(response.choices) > 0:
+                choice = response.choices[0]
+                if choice.message and choice.message.content:
+                    answer = choice.message.content.strip()
+                else:
+                    finish_reason = getattr(choice, 'finish_reason', None)
+                    answer = f"[Empty response - finish_reason: {finish_reason}]"
+            else:
+                answer = "[No choices returned from API]"
+            
+            pricing = self.PRICING.get(self.model_name, {"input": 0.0, "output": 0.0})
+            cost = (input_tokens * pricing["input"] + output_tokens * pricing["output"]) / 1_000_000
+            
+            return LLMResponse(
+                model=self.model_name,
+                answer=answer,
+                input_tokens=input_tokens,
+                output_tokens=output_tokens,
+                latency_ms=latency_ms,
+                cost_usd=cost,
+                error=None if answer and not answer.startswith("[") else answer
             )
         except Exception as e:
             return LLMResponse(
@@ -223,19 +312,12 @@ class GeminiClient(BaseLLMClient):
         
         start_time = time.time()
         try:
-            # Build generation config - disable thinking for 2.5 Pro
-            gen_config = {
-                "temperature": 0.1,
-                "max_output_tokens": 8192,  # Increased significantly
-            }
-            
-            # Disable thinking mode for models that have it enabled by default
-            if "2.5-pro" in self.model_name or "3.0" in self.model_name:
-                gen_config["thinking_config"] = {"thinking_budget": 0}
-            
             response = self.client.generate_content(
                 full_prompt,
-                generation_config=gen_config
+                generation_config={
+                    "temperature": 0.1,
+                    "max_output_tokens": 8192,
+                }
             )
             latency_ms = (time.time() - start_time) * 1000
             
@@ -277,7 +359,7 @@ class GeminiClient(BaseLLMClient):
             )
 
 
-# Model registry - Only GPT-5, Claude 4.5, and Gemini 2.5/3.0
+# Model registry - GPT-5, Claude 4.5, Gemini 2.5/3.0, and Groq Open-Source
 AVAILABLE_MODELS = {
     # OpenAI GPT-5 Series
     "GPT-5": {"client": OpenAIClient, "model_id": "gpt-5", "key_name": "OPENAI_API_KEY"},
@@ -291,7 +373,11 @@ AVAILABLE_MODELS = {
     # Google Gemini 2.5/3.0 Series
     "Gemini 2.5 Flash": {"client": GeminiClient, "model_id": "gemini-2.5-flash", "key_name": "GOOGLE_API_KEY"},
     "Gemini 2.5 Pro": {"client": GeminiClient, "model_id": "gemini-2.5-pro", "key_name": "GOOGLE_API_KEY"},
-    "Gemini 3.0 Pro": {"client": GeminiClient, "model_id": "gemini-3.0-pro-preview", "key_name": "GOOGLE_API_KEY"},
+    
+    # Groq Open-Source Models (FREE)
+    "Llama 3.3 70B": {"client": GroqClient, "model_id": "llama-3.3-70b-versatile", "key_name": "GROQ_API_KEY"},
+    "Llama 3.1 8B": {"client": GroqClient, "model_id": "llama-3.1-8b-instant", "key_name": "GROQ_API_KEY"},
+    "Qwen3 32B": {"client": GroqClient, "model_id": "qwen/qwen3-32b", "key_name": "GROQ_API_KEY"},
 }
 
 
@@ -317,6 +403,7 @@ def check_api_keys() -> dict:
         keys_status["OpenAI"] = bool(keys.get("OPENAI_API_KEY"))
         keys_status["Anthropic"] = bool(keys.get("ANTHROPIC_API_KEY"))
         keys_status["Google"] = bool(keys.get("GOOGLE_API_KEY"))
+        keys_status["Groq"] = bool(keys.get("GROQ_API_KEY"))
     except Exception:
-        keys_status = {"OpenAI": False, "Anthropic": False, "Google": False}
+        keys_status = {"OpenAI": False, "Anthropic": False, "Google": False, "Groq": False}
     return keys_status

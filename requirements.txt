@@ -14,6 +14,7 @@ plotly>=5.18.0
 openai>=1.0.0
 anthropic>=0.18.0
 google-generativeai>=0.4.0
+groq>=0.4.0
 
 # Evaluation metrics (for later)
 rouge-score>=0.1.2
