@@ -1,7 +1,6 @@
 """
 Streamlit Page: LLM Evaluation
 Direct Q&A testing without RAG
-
 """
 
 import streamlit as st
@@ -23,6 +22,16 @@ from src.llm_clients import (
     check_api_keys, 
     AVAILABLE_MODELS,
     LLMResponse
+)
+from src.evaluation import (
+    evaluate_response,
+    aggregate_metrics,
+    EvaluationResult
+)
+from src.hallucination import (
+    detect_hallucination,
+    compute_hallucination_rate,
+    HallucinationResult
 )
 
 st.set_page_config(
@@ -99,6 +108,18 @@ question_types = st.sidebar.multiselect(
     default=df["question_type"].unique().tolist()
 )
 
+compute_semantic = st.sidebar.checkbox(
+    "Compute Semantic Similarity",
+    value=False,
+    help="Uses sentence-transformers (slower but more accurate)"
+)
+
+use_llm_judge = st.sidebar.checkbox(
+    "Use LLM-as-Judge",
+    value=False,
+    help="Uses Llama 3.1 8B via Groq to evaluate faithfulness (requires Groq API key)"
+)
+
 # Initialize results storage
 if "eval_results" not in st.session_state:
     st.session_state.eval_results = []
@@ -148,6 +169,24 @@ with col2:
                 context = row["context_linearized"] if include_context else None
                 response = client.query(row["question"], context)
                 
+                # Compute evaluation metrics
+                eval_result = evaluate_response(
+                    response.answer, 
+                    row["ground_truth_answer"],
+                    compute_semantic=compute_semantic
+                )
+                
+                # Compute hallucination metrics (only if context provided)
+                hall_result = None
+                if include_context and context:
+                    hall_result = detect_hallucination(
+                        answer=response.answer,
+                        context=context,
+                        question=row["question"],
+                        use_semantic=compute_semantic,
+                        use_llm_judge=use_llm_judge
+                    )
+                
                 results.append({
                     "question_id": row["question_id"],
                     "model": model_name,
@@ -161,7 +200,21 @@ with col2:
                     "output_tokens": response.output_tokens,
                     "latency_ms": response.latency_ms,
                     "cost_usd": response.cost_usd,
-                    "error": response.error
+                    "error": response.error,
+                    # Evaluation metrics
+                    "exact_match": eval_result.exact_match,
+                    "f1_score": eval_result.f1_score,
+                    "numerical_accuracy": eval_result.numerical_accuracy,
+                    "rouge_l": eval_result.rouge_l,
+                    "bleu_score": eval_result.bleu_score,
+                    "semantic_similarity": eval_result.semantic_similarity,
+                    # Hallucination metrics
+                    "token_overlap": hall_result.token_overlap if hall_result else None,
+                    "semantic_faithfulness": hall_result.semantic_faithfulness if hall_result else None,
+                    "llm_judge_score": hall_result.llm_judge_score if hall_result else None,
+                    "llm_judge_verdict": hall_result.llm_judge_verdict if hall_result else None,
+                    "hallucination_score": hall_result.hallucination_score if hall_result else None,
+                    "is_hallucination": hall_result.is_hallucination if hall_result else None,
                 })
                 
                 # Small delay to avoid rate limits
@@ -194,6 +247,69 @@ if "eval_df" in st.session_state and len(st.session_state.eval_df) > 0:
     summary.columns = ["Avg Latency (ms)", "Std Latency", "Total Cost ($)", 
                        "Input Tokens", "Output Tokens", "Errors"]
     st.dataframe(summary, use_container_width=True)
+    
+    # Evaluation Metrics Summary
+    st.subheader("📊 Evaluation Metrics by Model")
+    
+    eval_summary = results_df.groupby("model").agg({
+        "exact_match": "mean",
+        "f1_score": "mean",
+        "rouge_l": "mean",
+        "bleu_score": "mean",
+        "numerical_accuracy": lambda x: x.dropna().mean() if x.dropna().any() else None,
+        "semantic_similarity": lambda x: x.dropna().mean() if x.dropna().any() else None,
+    }).round(4)
+    
+    eval_summary.columns = ["Exact Match", "F1 Score", "ROUGE-L", "BLEU", 
+                            "Numerical Acc", "Semantic Sim"]
+    st.dataframe(eval_summary, use_container_width=True)
+    
+    # Metrics comparison chart
+    st.subheader("Model Comparison - Accuracy Metrics")
+    
+    chart_data = results_df.groupby("model")[["f1_score", "rouge_l", "exact_match"]].mean().reset_index()
+    chart_melted = chart_data.melt(id_vars=["model"], var_name="Metric", value_name="Score")
+    
+    fig_metrics = px.bar(
+        chart_melted,
+        x="model",
+        y="Score",
+        color="Metric",
+        barmode="group",
+        title="Accuracy Metrics by Model"
+    )
+    st.plotly_chart(fig_metrics, use_container_width=True)
+    
+    # Hallucination Metrics (only if context was provided)
+    if results_df["hallucination_score"].notna().any():
+        st.subheader("🔍 Hallucination Detection by Model")
+        
+        hall_summary = results_df.groupby("model").agg({
+            "token_overlap": lambda x: x.dropna().mean() if x.dropna().any() else None,
+            "semantic_faithfulness": lambda x: x.dropna().mean() if x.dropna().any() else None,
+            "llm_judge_score": lambda x: x.dropna().mean() if x.dropna().any() else None,
+            "hallucination_score": lambda x: x.dropna().mean() if x.dropna().any() else None,
+            "is_hallucination": lambda x: x.dropna().sum() / len(x.dropna()) if x.dropna().any() else 0.0,
+        }).round(4)
+        
+        hall_summary.columns = ["Token Overlap", "Semantic Faith.", "LLM Judge", 
+                                "Halluc. Score", "Halluc. Rate"]
+        st.dataframe(hall_summary, use_container_width=True)
+        
+        # Hallucination rate chart
+        hall_rate = results_df.groupby("model")["is_hallucination"].mean().reset_index()
+        hall_rate.columns = ["Model", "Hallucination Rate"]
+        
+        fig_hall = px.bar(
+            hall_rate,
+            x="Model",
+            y="Hallucination Rate",
+            title="Hallucination Rate by Model (Lower is Better)",
+            color="Hallucination Rate",
+            color_continuous_scale="RdYlGn_r"
+        )
+        fig_hall.update_layout(yaxis_tickformat=".0%")
+        st.plotly_chart(fig_hall, use_container_width=True)
     
     # Latency comparison
     st.subheader("Latency Comparison")
@@ -276,6 +392,33 @@ if "eval_df" in st.session_state and len(st.session_state.eval_df) > 0:
                 "Output Tokens": inspect_row["output_tokens"],
                 "Cost": f"${inspect_row['cost_usd']:.6f}"
             })
+            
+            st.markdown("**Evaluation Scores:**")
+            eval_scores = {
+                "Exact Match": f"{inspect_row['exact_match']:.2f}",
+                "F1 Score": f"{inspect_row['f1_score']:.4f}",
+                "ROUGE-L": f"{inspect_row['rouge_l']:.4f}",
+                "BLEU": f"{inspect_row['bleu_score']:.4f}",
+            }
+            if inspect_row.get("numerical_accuracy") is not None:
+                eval_scores["Numerical Acc"] = f"{inspect_row['numerical_accuracy']:.2f}"
+            if inspect_row.get("semantic_similarity") is not None:
+                eval_scores["Semantic Sim"] = f"{inspect_row['semantic_similarity']:.4f}"
+            st.json(eval_scores)
+            
+            # Hallucination info
+            if inspect_row.get("hallucination_score") is not None:
+                st.markdown("**Hallucination Analysis:**")
+                hall_info = {
+                    "Token Overlap": f"{inspect_row['token_overlap']:.4f}",
+                    "Hallucination Score": f"{inspect_row['hallucination_score']:.4f}",
+                    "Is Hallucination": "⚠️ Yes" if inspect_row['is_hallucination'] else "✅ No",
+                }
+                if inspect_row.get("semantic_faithfulness") is not None:
+                    hall_info["Semantic Faithfulness"] = f"{inspect_row['semantic_faithfulness']:.4f}"
+                if inspect_row.get("llm_judge_verdict") is not None:
+                    hall_info["LLM Judge"] = inspect_row['llm_judge_verdict']
+                st.json(hall_info)
     
     # Export results
     st.header("📥 Export Results")

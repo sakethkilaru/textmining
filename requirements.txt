@@ -16,9 +16,7 @@ anthropic>=0.18.0
 google-generativeai>=0.4.0
 groq>=0.4.0
 
-# Evaluation metrics (for later)
-rouge-score>=0.1.2
-nltk>=3.8.0
+# Evaluation metrics
 sentence-transformers>=2.2.0
 
 # RAG components (for later)
