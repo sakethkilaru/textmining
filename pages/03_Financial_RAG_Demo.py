@@ -118,8 +118,10 @@ def answer_no_rag(question: str) -> str:
             "role": "system",
             "content": (
                 "You are a helpful financial Q&A assistant. "
-                "Answer using your own knowledge. "
-                "If you are unsure, say you are not sure instead of making up numbers."
+                "Answer using your own knowledge of public companies. "
+                "It is okay to give your best estimate even if the numbers "
+                "are not perfectly up to date. Do not say you cannot answer "
+                "unless the question is clearly impossible."
             ),
         },
         {"role": "user", "content": question},

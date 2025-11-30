@@ -2,3 +2,6 @@ Netflix, Inc. (NFLX) is a company in the Communication Services sector and Enter
 As of the latest data snapshot used in this project, the market cap of Netflix, Inc. was 455.85 billion USD.
 The company generated total revenue of 43.38 billion USD over the trailing twelve months.
 Its profit margin was 24.0%, operating margin was 28.2%, and gross margin was 48.1%.
+Netflix, Inc. employs roughly 14,000 people.
+The trailing price-to-earnings (P/E) ratio was about 44.8.
+Business summary: Netflix, Inc. provides entertainment services. The company offers television (TV) series, documentaries, feature films, and games across various genres and languages. It also provides members the ability to receive streaming content through a host of internet-connected devices, including TVs, digital video players, TV set-top boxes, and mobile devices. The company operates approximately in 190 countries. Netflix, Inc. was incorporated in 1997 and is headquartered in Los Gatos, California.
