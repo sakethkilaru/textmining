@@ -63,7 +63,9 @@ def cosine_sim(a, b):
 
 # ========== LOAD CORPUS & BUILD INDEX ==========
 @st.cache_resource(show_spinner=True)
-def load_corpus_and_index(data_dir=DATA_DIR):
+@st.cache_resource(show_spinner=True)
+def load_corpus_and_index(data_dir=DATA_DIR, version="v2"):
+    # just adding version="v2" changes the cache key
     docs = []
     metadatas = []
 
