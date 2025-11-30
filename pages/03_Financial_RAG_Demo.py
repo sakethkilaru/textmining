@@ -24,23 +24,7 @@ def get_openai_client():
 
 client = get_openai_client()
 
-# ========== TEXT SPLITTING & EMBEDDING ==========
-def split_text(text: str, chunk_size: int = 1500, overlap: int = 200):
-    """Very simple character-based splitter."""
-    chunks = []
-    start = 0
-    n = len(text)
-    while start < n:
-        end = min(start + chunk_size, n)
-        chunks.append(text[start:end])
-        if end == n:
-            break
-        start = end - overlap
-        if start < 0:
-            start = 0
-    return chunks
-
-
+# ========== EMBEDDING HELPERS ==========
 def embed_texts(texts, model=EMBED_MODEL, batch_size=64):
     """Embed a list of texts using OpenAI embeddings; returns (N, D) array."""
     embeddings = []
@@ -63,9 +47,11 @@ def cosine_sim(a, b):
 
 # ========== LOAD CORPUS & BUILD INDEX ==========
 @st.cache_resource(show_spinner=True)
-@st.cache_resource(show_spinner=True)
-def load_corpus_and_index(data_dir=DATA_DIR, version="v2"):
-    # just adding version="v2" changes the cache key
+def load_corpus_and_index(data_dir=DATA_DIR, version="v3"):
+    """
+    Load one document per company (no chunking).
+    Each .txt file becomes a single retrievable unit.
+    """
     docs = []
     metadatas = []
 
@@ -79,16 +65,14 @@ def load_corpus_and_index(data_dir=DATA_DIR, version="v2"):
         with open(path, "r", encoding="utf-8") as f:
             text = f.read()
 
-        chunks = split_text(text, chunk_size=1500, overlap=200)
-        for i, chunk in enumerate(chunks):
-            docs.append(chunk)
-            metadatas.append(
-                {
-                    "ticker": ticker,
-                    "chunk_id": i,
-                    "source": path,
-                }
-            )
+        # one doc per company
+        docs.append(text)
+        metadatas.append(
+            {
+                "ticker": ticker,
+                "source": path,
+            }
+        )
 
     embeddings = embed_texts(docs)
     return docs, metadatas, embeddings
@@ -130,7 +114,7 @@ def answer_no_rag(question: str) -> str:
     resp = client.chat.completions.create(
         model=CHAT_MODEL,
         messages=messages,
-        temperature=0.2,
+        temperature=0.4,  # a bit more willing to guess
     )
     return resp.choices[0].message.content
 
@@ -145,12 +129,14 @@ def answer_with_rag(question: str, retrieved_chunks) -> str:
 
     prompt = (
         "You are a careful financial Q&A assistant.\n"
-        "You will be given context extracted from company financial statements.\n"
+        "You are given context extracted from company snapshots "
+        "(market cap, revenue, margins, employees, business summary, etc.).\n"
         "Use ONLY this context to answer the question.\n"
-        "If the answer is not in the context, say you cannot answer from the provided documents.\n\n"
+        "If the answer is truly not in the context, say that it is not available "
+        "in the provided documents instead of guessing.\n\n"
         f"Context:\n{context}\n\n"
         f"Question:\n{question}\n\n"
-        "Answer clearly and include specific numbers only if they are present in the context."
+        "Answer in one or two sentences, quoting numbers from the context when relevant."
     )
 
     messages = [
@@ -170,20 +156,22 @@ def answer_with_rag(question: str, retrieved_chunks) -> str:
 def main():
     st.title("📚 Financial RAG Demo")
     st.write(
-        "This page lets you compare **No-RAG vs RAG** answers over the 10 company "
-        "financial text files stored in `financial_statements/`."
+        "Compare **No-RAG vs RAG** on questions about 10 large public companies.\n\n"
+        "No-RAG uses the model's own knowledge (and may estimate or hallucinate). "
+        "RAG is forced to use only the text in the knowledge base "
+        "built from the files in `financial_statements/`."
     )
 
     with st.sidebar:
         st.header("RAG Settings")
-        top_k = st.slider("Number of chunks to retrieve (k)", 1, 10, 5)
-        st.caption("Higher k = more context but longer prompts and more noise.")
+        top_k = st.slider("Number of company docs to retrieve (k)", 1, 10, 3)
+        st.caption("Higher k = more companies' docs in context → more info, but also more noise.")
 
     with st.spinner("Loading corpus and building vector index..."):
         docs, metadatas, embeddings = load_corpus_and_index()
 
     question = st.text_area(
-        "Ask a financial question (e.g. `What was Tesla's revenue in 2023?`)",
+        "Ask a financial question (e.g. `How many employees does Tesla have?`)",
         height=80,
     )
 
@@ -207,11 +195,11 @@ def main():
             st.write(rag_answer)
 
         st.markdown("---")
-        st.subheader("Retrieved Context Chunks")
+        st.subheader("Retrieved Context Chunks (per company)")
         for i, item in enumerate(retrieved, start=1):
             meta = item["meta"]
             with st.expander(
-                f"Chunk {i}: {meta['ticker']} (score={item['score']:.3f}) - {meta['source']}"
+                f"Doc {i}: {meta['ticker']} (score={item['score']:.3f}) - {meta['source']}"
             ):
                 st.write(item["text"])
 
