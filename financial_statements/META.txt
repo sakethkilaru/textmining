@@ -1,0 +1,194 @@
+Company: META
+
+=== Company Info ===
+
+{'address1': '1 Meta Way', 'city': 'Menlo Park', 'state': 'CA', 'zip': '94025', 'country': 'United States', 'phone': '650 543 4800', 'website': 'https://investor.atmeta.com', 'industry': 'Internet Content & Information', 'industryKey': 'internet-content-information', 'industryDisp': 'Internet Content & Information', 'sector': 'Communication Services', 'sectorKey': 'communication-services', 'sectorDisp': 'Communication Services', 'longBusinessSummary': 'Meta Platforms, Inc. engages in the development of products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality and mixed reality headsets, augmented reality, and wearables worldwide. It operates through two segments, Family of Apps (FoA) and Reality Labs (RL). The FoA segment offers Facebook, which enables people to build community through feed, reels, stories, groups, marketplace, and other; Instagram that brings people closer through instagram feed, stories, reels, live, and messaging; Messenger, a messaging application for people to connect with friends, family, communities, and businesses across platforms and devices through text, audio, and video calls; Threads, an application for text-based updates and public conversations; and WhatsApp, a messaging application that is used by people and businesses to communicate and transact in a private way. The RL segment provides virtual, augmented, and mixed reality related products comprising consumer hardware, software, and content that help people feel connected, anytime, and anywhere. The company was formerly known as Facebook, Inc. and changed its name to Meta Platforms, Inc. in October 2021. The company was incorporated in 2004 and is headquartered in Menlo Park, California.', 'fullTimeEmployees': 78450, 'companyOfficers': [{'maxAge': 1, 'name': 'Mr. Mark Elliot Zuckerberg', 'age': 40, 'title': 'Founder, Chairman & CEO', 'yearBorn': 1984, 'fiscalYear': 2024, 'totalPay': 27219874, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Ms. Susan J. S. Li', 'age': 38, 'title': 'Chief Financial Officer', 'yearBorn': 1986, 'fiscalYear': 2024, 'totalPay': 1948846, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Javier  Olivan', 'age': 47, 'title': 'Chief Operating Officer', 'yearBorn': 1977, 'fiscalYear': 2024, 'totalPay': 3835042, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Andrew  Bosworth', 'age': 42, 'title': 'Chief Technology Officer', 'yearBorn': 1982, 'fiscalYear': 2024, 'totalPay': 1923184, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Christopher K. Cox', 'age': 41, 'title': 'Chief Product Officer', 'yearBorn': 1983, 'fiscalYear': 2024, 'totalPay': 1937677, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Dana  White', 'title': 'Independent Director', 'fiscalYear': 2024, 'totalPay': 272, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Aaron A. Anderson', 'title': 'Chief Accounting Officer', 'fiscalYear': 2024, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Atish  Banerjea', 'age': 58, 'title': 'Chief Information Officer', 'yearBorn': 1966, 'fiscalYear': 2024, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Ms. Jennifer G. Newstead J.D.', 'age': 54, 'title': 'Chief Legal Officer', 'yearBorn': 1970, 'fiscalYear': 2024, 'totalPay': 3079624, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Henry T. A. Moniz', 'age': 59, 'title': 'Chief Compliance Officer', 'yearBorn': 1965, 'fiscalYear': 2024, 'exercisedValue': 0, 'unexercisedValue': 0}], 'auditRisk': 9, 'boardRisk': 10, 'compensationRisk': 10, 'shareHolderRightsRisk': 10, 'overallRisk': 10, 'governanceEpochDate': 1761955200, 'compensationAsOfEpochDate': 1735603200, 'executiveTeam': [], 'maxAge': 86400, 'priceHint': 2, 'previousClose': 633.61, 'open': 636.075, 'dayLow': 635.5, 'dayHigh': 648.05, 'regularMarketPreviousClose': 633.61, 'regularMarketOpen': 636.075, 'regularMarketDayLow': 635.5, 'regularMarketDayHigh': 648.05, 'dividendRate': 2.1, 'dividendYield': 0.33, 'exDividendDate': 1758499200, 'payoutRatio': 0.091800004, 'beta': 1.272, 'trailingPE': 28.645004, 'forwardPE': 25.610674, 'volume': 10930322, 'regularMarketVolume': 10930322, 'averageVolume': 16834288, 'averageVolume10days': 21407750, 'averageDailyVolume10Day': 21407750, 'bid': 647.49, 'ask': 648.34, 'bidSize': 1, 'askSize': 2, 'marketCap': 1633175863296, 'fiftyTwoWeekLow': 479.8, 'fiftyTwoWeekHigh': 796.25, 'allTimeHigh': 796.25, 'allTimeLow': 17.55, 'priceToSalesTrailing12Months': 8.620253, 'fiftyDayAverage': 688.9322, 'twoHundredDayAverage': 673.44196, 'trailingAnnualDividendRate': 2.075, 'trailingAnnualDividendYield': 0.0032748852, 'currency': 'USD', 'tradeable': False, 'enterpriseValue': 1603643506688, 'profitMargins': 0.30892, 'floatShares': 2173375331, 'sharesOutstanding': 2177889269, 'sharesShort': 30166415, 'sharesShortPriorMonth': 24531229, 'sharesShortPreviousMonthDate': 1760486400, 'dateShortInterest': 1763078400, 'sharesPercentSharesOut': 0.012, 'heldPercentInsiders': 0.00062, 'heldPercentInstitutions': 0.79320997, 'shortRatio': 1.41, 'shortPercentOfFloat': 0.0139, 'impliedSharesOutstanding': 2520527597, 'bookValue': 76.98, 'priceToBook': 8.417121, 'lastFiscalYearEnd': 1735603200, 'nextFiscalYearEnd': 1767139200, 'mostRecentQuarter': 1759190400, 'earningsQuarterlyGrowth': -0.827, 'netIncomeToCommon': 58527997952, 'trailingEps': 22.62, 'forwardEps': 25.3, 'enterpriseToRevenue': 8.464, 'enterpriseToEbitda': 16.297, '52WeekChange': 0.103235126, 'SandP52WeekChange': 0.12934029, 'lastDividendValue': 0.525, 'lastDividendDate': 1758499200, 'quoteType': 'EQUITY', 'currentPrice': 647.95, 'targetHighPrice': 1117.0, 'targetLowPrice': 685.0, 'targetMeanPrice': 841.4155, 'targetMedianPrice': 850.0, 'recommendationMean': 1.38235, 'recommendationKey': 'strong_buy', 'numberOfAnalystOpinions': 60, 'totalCash': 44447997952, 'totalCashPerShare': 17.634, 'ebitda': 98399002624, 'totalDebt': 51059998720, 'quickRatio': 1.671, 'currentRatio': 1.978, 'totalRevenue': 189458006016, 'debtToEquity': 26.311, 'revenuePerShare': 75.122, 'returnOnAssets': 0.18013, 'returnOnEquity': 0.32643002, 'grossProfits': 155381006336, 'freeCashflow': 18617749504, 'operatingCashflow': 107574001664, 'earningsGrowth': -0.826, 'revenueGrowth': 0.262, 'grossMargins': 0.82013, 'ebitdaMargins': 0.51937, 'operatingMargins': 0.40075, 'financialCurrency': 'USD', 'symbol': 'META', 'language': 'en-US', 'region': 'US', 'typeDisp': 'Equity', 'quoteSourceName': 'Nasdaq Real Time Price', 'triggerable': True, 'customPriceAlertConfidence': 'HIGH', 'regularMarketChangePercent': 2.2632263, 'regularMarketPrice': 647.95, 'hasPrePostMarketData': True, 'firstTradeDateMilliseconds': 1337347800000, 'corporateActions': [], 'postMarketTime': 1764357504, 'regularMarketTime': 1764352801, 'exchange': 'NMS', 'messageBoardId': 'finmb_20765463', 'exchangeTimezoneName': 'America/New_York', 'exchangeTimezoneShortName': 'EST', 'gmtOffSetMilliseconds': -18000000, 'market': 'us_market', 'esgPopulated': False, 'marketState': 'POST', 'shortName': 'Meta Platforms, Inc.', 'longName': 'Meta Platforms, Inc.', 'cryptoTradeable': False, 'postMarketChangePercent': -0.10417282, 'postMarketPrice': 647.275, 'postMarketChange': -0.6749878, 'regularMarketChange': 14.340027, 'regularMarketDayRange': '635.5 - 648.05', 'fullExchangeName': 'NasdaqGS', 'averageDailyVolume3Month': 16834288, 'fiftyTwoWeekLowChange': 168.15002, 'fiftyTwoWeekLowChangePercent': 0.3504586, 'fiftyTwoWeekRange': '479.8 - 796.25', 'fiftyTwoWeekHighChange': -148.29999, 'fiftyTwoWeekHighChangePercent': -0.18624802, 'fiftyTwoWeekChangePercent': 10.323513, 'dividendDate': 1759104000, 'earningsTimestamp': 1761768000, 'earningsTimestampStart': 1769634000, 'earningsTimestampEnd': 1769634000, 'earningsCallTimestampStart': 1761769800, 'earningsCallTimestampEnd': 1761769800, 'isEarningsDateEstimate': True, 'epsTrailingTwelveMonths': 22.62, 'epsForward': 25.3, 'epsCurrentYear': 25.64947, 'priceEpsCurrentYear': 25.261732, 'fiftyDayAverageChange': -40.982178, 'fiftyDayAverageChangePercent': -0.05948652, 'twoHundredDayAverageChange': -25.491943, 'twoHundredDayAverageChangePercent': -0.037853215, 'sourceInterval': 15, 'exchangeDataDelayedBy': 0, 'ipoExpectedDate': '2022-06-09', 'prevName': 'Facebook, Inc.', 'nameChangeDate': '2025-11-28', 'averageAnalystRating': '1.4 - Strong Buy', 'displayName': 'Meta Platforms', 'trailingPegRatio': 1.7496}
+
+
+=== Income Statement ===
+
+                                                      2024-12-31  ...  2020-12-31
+Tax Effect Of Unusual Items                        -8.142000e+07  ...         NaN
+Tax Rate For Calcs                                  1.180000e-01  ...         NaN
+Normalized EBITDA                                   8.756600e+10  ...         NaN
+Total Unusual Items                                -6.900000e+08  ...         NaN
+Total Unusual Items Excluding Goodwill             -6.900000e+08  ...         NaN
+Net Income From Continuing Operation Net Minori...  6.236000e+10  ...         NaN
+Reconciled Depreciation                             1.549800e+10  ...         NaN
+Reconciled Cost Of Revenue                          3.016100e+10  ...         NaN
+EBITDA                                              8.687600e+10  ...         NaN
+EBIT                                                7.137800e+10  ...         NaN
+Net Interest Income                                 1.973000e+09  ...         NaN
+Interest Expense                                    7.150000e+08  ...         NaN
+Interest Income                                     2.517000e+09  ...         NaN
+Normalized Income                                   6.296858e+10  ...         NaN
+Net Income From Continuing And Discontinued Ope...  6.236000e+10  ...         NaN
+Total Expenses                                      9.512100e+10  ...         NaN
+Total Operating Income As Reported                  6.938000e+10  ...         NaN
+Diluted Average Shares                              2.614000e+09  ...         NaN
+Basic Average Shares                                2.534000e+09  ...         NaN
+Diluted EPS                                         2.386000e+01  ...         NaN
+Basic EPS                                           2.461000e+01  ...         NaN
+Diluted NI Availto Com Stockholders                 6.236000e+10  ...         NaN
+Net Income Common Stockholders                      6.236000e+10  ...         NaN
+Otherunder Preferred Stock Dividend                          NaN  ...         0.0
+Net Income                                          6.236000e+10  ...         NaN
+Net Income Including Noncontrolling Interests       6.236000e+10  ...         NaN
+Net Income Continuous Operations                    6.236000e+10  ...         NaN
+Tax Provision                                       8.303000e+09  ...         NaN
+Pretax Income                                       7.066300e+10  ...         NaN
+Other Income Expense                               -6.900000e+08  ...         NaN
+Other Non Operating Income Expenses                          NaN  ... -34000000.0
+Special Income Charges                                       NaN  ...         0.0
+Gain On Sale Of Security                           -6.900000e+08  ...         NaN
+Net Non Operating Interest Income Expense           1.973000e+09  ...         NaN
+Total Other Finance Cost                           -1.710000e+08  ...         NaN
+Interest Expense Non Operating                      7.150000e+08  ...         NaN
+Interest Income Non Operating                       2.517000e+09  ...         NaN
+Operating Income                                    6.938000e+10  ...         NaN
+Operating Expense                                   6.496000e+10  ...         NaN
+Research And Development                            4.387300e+10  ...         NaN
+Selling General And Administration                  2.108700e+10  ...         NaN
+Selling And Marketing Expense                       1.134700e+10  ...         NaN
+General And Administrative Expense                  9.740000e+09  ...         NaN
+Other Gand A                                        9.740000e+09  ...         NaN
+Gross Profit                                        1.343400e+11  ...         NaN
+Cost Of Revenue                                     3.016100e+10  ...         NaN
+Total Revenue                                       1.645010e+11  ...         NaN
+Operating Revenue                                   1.627790e+11  ...         NaN
+
+[48 rows x 5 columns]
+
+
+=== Balance Sheet ===
+
+                                                    2024-12-31  ...  2020-12-31
+Treasury Shares Number                                     NaN  ...         NaN
+Ordinary Shares Number                            2.534488e+09  ...         NaN
+Share Issued                                      2.534488e+09  ...         NaN
+Total Debt                                        4.906000e+10  ...         NaN
+Tangible Book Value                               1.610680e+11  ...         NaN
+...                                                        ...  ...         ...
+Cash Cash Equivalents And Short Term Investments  7.781500e+10  ...         NaN
+Other Short Term Investments                      3.392600e+10  ...         NaN
+Cash And Cash Equivalents                         4.388900e+10  ...         NaN
+Cash Equivalents                                  3.667100e+10  ...         NaN
+Cash Financial                                    7.218000e+09  ...         NaN
+
+[72 rows x 5 columns]
+
+
+=== Cash Flow ===
+
+                                                  2024-12-31  ...   2020-12-31
+Free Cash Flow                                  5.407200e+10  ...          NaN
+Repurchase Of Capital Stock                    -3.012500e+10  ...          NaN
+Repayment Of Debt                              -1.969000e+09  ...          NaN
+Issuance Of Debt                                1.043200e+10  ...          NaN
+Capital Expenditure                            -3.725600e+10  ...          NaN
+Interest Paid Supplemental Data                 4.860000e+08  ...          NaN
+Income Tax Paid Supplemental Data               1.055400e+10  ...          NaN
+End Cash Position                               4.543800e+10  ...          NaN
+Beginning Cash Position                         4.282700e+10  ...          NaN
+Effect Of Exchange Rate Changes                -7.860000e+08  ...          NaN
+Changes In Cash                                 3.397000e+09  ...          NaN
+Financing Cash Flow                            -4.078100e+10  ...          NaN
+Cash Flow From Continuing Financing Activities -4.078100e+10  ...          NaN
+Net Other Financing Charges                    -1.404700e+10  ...          NaN
+Cash Dividends Paid                            -5.072000e+09  ...          NaN
+Common Stock Dividend Paid                     -5.072000e+09  ...          NaN
+Net Common Stock Issuance                      -3.012500e+10  ...          NaN
+Common Stock Payments                          -3.012500e+10  ...          NaN
+Net Issuance Payments Of Debt                   8.463000e+09  ...          NaN
+Net Short Term Debt Issuance                             NaN  ...   24000000.0
+Net Long Term Debt Issuance                     8.463000e+09  ...          NaN
+Long Term Debt Payments                        -1.969000e+09  ...          NaN
+Long Term Debt Issuance                         1.043200e+10  ...          NaN
+Investing Cash Flow                            -4.715000e+10  ...          NaN
+Cash Flow From Continuing Investing Activities -4.715000e+10  ...          NaN
+Net Other Investing Changes                     1.290000e+08  ...          NaN
+Net Investment Purchase And Sale               -9.753000e+09  ...          NaN
+Sale Of Investment                              1.578900e+10  ...          NaN
+Purchase Of Investment                         -2.554200e+10  ...          NaN
+Net Business Purchase And Sale                 -2.700000e+08  ...          NaN
+Purchase Of Business                           -2.700000e+08  ...          NaN
+Net PPE Purchase And Sale                      -3.725600e+10  ...          NaN
+Sale Of PPE                                              NaN  ...   48000000.0
+Purchase Of PPE                                -3.725600e+10  ...          NaN
+Operating Cash Flow                             9.132800e+10  ...          NaN
+Cash Flow From Continuing Operating Activities  9.132800e+10  ...          NaN
+Change In Working Capital                       1.048000e+09  ...          NaN
+Change In Other Working Capital                          NaN  ...  108000000.0
+Change In Other Current Liabilities             2.805000e+09  ...          NaN
+Change In Other Current Assets                 -2.700000e+08  ...          NaN
+Change In Payables And Accrued Expense          6.960000e+08  ...          NaN
+Change In Accrued Expense                       3.230000e+08  ...          NaN
+Change In Payable                               3.730000e+08  ...          NaN
+Change In Account Payable                       3.730000e+08  ...          NaN
+Change In Prepaid Assets                       -6.980000e+08  ...          NaN
+Change In Receivables                          -1.485000e+09  ...          NaN
+Changes In Account Receivables                 -1.485000e+09  ...          NaN
+Other Non Cash Items                            8.700000e+07  ...          NaN
+Stock Based Compensation                        1.669000e+10  ...          NaN
+Unrealized Gain Loss On Investment Securities            NaN  ...   33000000.0
+Asset Impairment Charge                         3.830000e+08  ...          NaN
+Deferred Tax                                   -4.738000e+09  ...          NaN
+Deferred Income Tax                            -4.738000e+09  ...          NaN
+Depreciation Amortization Depletion             1.549800e+10  ...          NaN
+Depreciation And Amortization                   1.549800e+10  ...          NaN
+Net Income From Continuing Operations           6.236000e+10  ...          NaN
+
+[56 rows x 5 columns]
+
+
+=== Quarterly Financials ===
+
+                                                      2025-09-30  ...    2024-09-30
+Tax Effect Of Unusual Items                         8.820000e+06  ...  1.320000e+06
+Tax Rate For Calcs                                  2.100000e-01  ...  1.200000e-01
+Normalized EBITDA                                   2.681100e+10  ...  2.204600e+10
+Total Unusual Items                                 4.200000e+07  ...  1.100000e+07
+Total Unusual Items Excluding Goodwill              4.200000e+07  ...  1.100000e+07
+Net Income From Continuing Operation Net Minori...  2.709000e+09  ...  1.568800e+10
+Reconciled Depreciation                             4.963000e+09  ...  4.027000e+09
+Reconciled Cost Of Revenue                          9.206000e+09  ...  7.375000e+09
+EBITDA                                              2.685300e+10  ...  2.205700e+10
+EBIT                                                2.189000e+10  ...  1.803000e+10
+Net Interest Income                                 1.086000e+09  ...  4.610000e+08
+Interest Expense                                    2.270000e+08  ...  2.080000e+08
+Interest Income                                     3.590000e+08  ...  6.610000e+08
+Normalized Income                                   2.675820e+09  ...  1.567832e+10
+Net Income From Continuing And Discontinued Ope...  2.709000e+09  ...  1.568800e+10
+Total Expenses                                      3.070700e+10  ...  2.323900e+10
+Total Operating Income As Reported                  2.053500e+10  ...  1.735000e+10
+Diluted Average Shares                              2.572000e+09  ...  2.600000e+09
+Basic Average Shares                                2.517000e+09  ...  2.529000e+09
+Diluted EPS                                         1.050000e+00  ...  6.030000e+00
+Basic EPS                                           1.080000e+00  ...  6.200000e+00
+Diluted NI Availto Com Stockholders                 2.709000e+09  ...  1.568800e+10
+Net Income Common Stockholders                      2.709000e+09  ...  1.568800e+10
+Net Income                                          2.709000e+09  ...  1.568800e+10
+Net Income Including Noncontrolling Interests       2.709000e+09  ...  1.568800e+10
+Net Income Continuous Operations                    2.709000e+09  ...  1.568800e+10
+Tax Provision                                       1.895400e+10  ...  2.134000e+09
+Pretax Income                                       2.166300e+10  ...  1.782200e+10
+Other Income Expense                                4.200000e+07  ...  1.100000e+07
+Gain On Sale Of Security                            4.200000e+07  ...  1.100000e+07
+Net Non Operating Interest Income Expense           1.086000e+09  ...  4.610000e+08
+Total Other Finance Cost                           -9.540000e+08  ... -8.000000e+06
+Interest Expense Non Operating                      2.270000e+08  ...  2.080000e+08
+Interest Income Non Operating                       3.590000e+08  ...  6.610000e+08
+Operating Income                                    2.053500e+10  ...  1.735000e+10
+Operating Expense                                   2.150100e+10  ...  1.586400e+10
+Research And Development                            1.514400e+10  ...  1.117700e+10
+Selling General And Administration                  6.357000e+09  ...  4.687000e+09
+Selling And Marketing Expense                       2.845000e+09  ...  2.822000e+09
+General And Administrative Expense                  3.512000e+09  ...  1.865000e+09
+Other Gand A                                        3.512000e+09  ...  1.865000e+09
+Gross Profit                                        4.203600e+10  ...  3.321400e+10
+Cost Of Revenue                                     9.206000e+09  ...  7.375000e+09
+Total Revenue                                       5.124200e+10  ...  4.058900e+10
+Operating Revenue                                   5.055200e+10  ...  4.015500e+10
+
+[45 rows x 5 columns]
+

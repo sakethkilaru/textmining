@@ -1,0 +1,198 @@
+Company: MSFT
+
+=== Company Info ===
+
+{'address1': 'One Microsoft Way', 'city': 'Redmond', 'state': 'WA', 'zip': '98052-6399', 'country': 'United States', 'phone': '425 882 8080', 'website': 'https://www.microsoft.com', 'industry': 'Software - Infrastructure', 'industryKey': 'software-infrastructure', 'industryDisp': 'Software - Infrastructure', 'sector': 'Technology', 'sectorKey': 'technology', 'sectorDisp': 'Technology', 'longBusinessSummary': "Microsoft Corporation develops and supports software, services, devices, and solutions worldwide. The company's Productivity and Business Processes segment offers Microsoft 365 Commercial, Enterprise Mobility + Security, Windows Commercial, Power BI, Exchange, SharePoint, Microsoft Teams, Security and Compliance, and Copilot; Microsoft 365 Commercial products, such as Windows Commercial on-premises and Office licensed services; Microsoft 365 Consumer products and cloud services, such as Microsoft 365 Consumer subscriptions, Office licensed on-premises, and other consumer services; LinkedIn; Dynamics products and cloud services, such as Dynamics 365, cloud-based applications, and on-premises ERP and CRM applications. Its Intelligent Cloud segment provides Server products and cloud services, such as Azure and other cloud services, GitHub, Nuance Healthcare, virtual desktop offerings, and other cloud services; Server products, including SQL and Windows Server, Visual Studio and System Center related Client Access Licenses, and other on-premises offerings; Enterprise and partner services, including Enterprise Support and Nuance professional Services, Industry Solutions, Microsoft Partner Network, and Learning Experience. The company's Personal Computing segment provides Windows and Devices, such as Windows OEM licensing and Devices and Surface and PC accessories; Gaming services and solutions, such as Xbox hardware, content, and services, first- and third-party content Xbox Game Pass, subscriptions, and Cloud Gaming, advertising, and other cloud services; search and news advertising services, such as Bing and Copilot, Microsoft News and Edge, and third-party affiliates. It sells its products through OEMs, distributors, and resellers; and online and retail stores. The company was founded in 1975 and is headquartered in Redmond, Washington.", 'fullTimeEmployees': 228000, 'companyOfficers': [{'maxAge': 1, 'name': 'Mr. Satya  Nadella', 'age': 57, 'title': 'Chairman & CEO', 'yearBorn': 1967, 'fiscalYear': 2025, 'totalPay': 12251294, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Bradford L. Smith LCA', 'age': 65, 'title': 'President & Vice Chairman', 'yearBorn': 1959, 'fiscalYear': 2025, 'totalPay': 4532750, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Ms. Amy E. Hood', 'age': 52, 'title': 'Executive VP & CFO', 'yearBorn': 1972, 'fiscalYear': 2025, 'totalPay': 4444191, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Takeshi  Numoto', 'age': 53, 'title': 'Executive VP & Chief Marketing Officer', 'yearBorn': 1971, 'fiscalYear': 2025, 'totalPay': 2871250, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Judson B. Althoff', 'age': 51, 'title': 'Executive VP & CEO of Commercial Business', 'yearBorn': 1973, 'fiscalYear': 2025, 'totalPay': 4490115, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Ms. Carolina  Dybeck Happe', 'age': 52, 'title': 'Executive VP & COO', 'yearBorn': 1972, 'fiscalYear': 2025, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Ms. Alice L. Jolla', 'age': 58, 'title': 'Corporate VP & Chief Accounting Officer', 'yearBorn': 1966, 'fiscalYear': 2025, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Matthew  Kerner', 'title': 'CTO & Corporate VP of Worldwide Sales and Solutions', 'fiscalYear': 2025, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Jonathan  Neilson', 'title': 'Vice President of Investor Relations', 'fiscalYear': 2025, 'exercisedValue': 0, 'unexercisedValue': 0}, {'maxAge': 1, 'name': 'Mr. Jonathan M. Palmer', 'title': 'Corporate Vice President & Chief Legal Officer', 'fiscalYear': 2025, 'exercisedValue': 0, 'unexercisedValue': 0}], 'auditRisk': 9, 'boardRisk': 5, 'compensationRisk': 4, 'shareHolderRightsRisk': 2, 'overallRisk': 3, 'governanceEpochDate': 1761955200, 'compensationAsOfEpochDate': 1767139200, 'irWebsite': 'http://www.microsoft.com/investor/default.aspx', 'executiveTeam': [], 'maxAge': 86400, 'priceHint': 2, 'previousClose': 485.5, 'open': 487.595, 'dayLow': 486.65, 'dayHigh': 492.63, 'regularMarketPreviousClose': 485.5, 'regularMarketOpen': 487.595, 'regularMarketDayLow': 486.65, 'regularMarketDayHigh': 492.63, 'dividendRate': 3.64, 'dividendYield': 0.75, 'exDividendDate': 1763596800, 'payoutRatio': 0.2361, 'fiveYearAvgDividendYield': 0.8, 'beta': 1.065, 'trailingPE': 34.943893, 'forwardPE': 32.91037, 'volume': 14363947, 'regularMarketVolume': 14363947, 'averageVolume': 21881398, 'averageVolume10days': 27665360, 'averageDailyVolume10Day': 27665360, 'bid': 491.78, 'ask': 492.22, 'bidSize': 3, 'askSize': 3, 'marketCap': 3657192177664, 'fiftyTwoWeekLow': 344.79, 'fiftyTwoWeekHigh': 555.45, 'allTimeHigh': 555.45, 'allTimeLow': 0.088542, 'priceToSalesTrailing12Months': 12.447389, 'fiftyDayAverage': 510.9218, 'twoHundredDayAverage': 467.58286, 'trailingAnnualDividendRate': 3.4, 'trailingAnnualDividendYield': 0.00700309, 'currency': 'USD', 'tradeable': False, 'enterpriseValue': 3626782425088, 'profitMargins': 0.35707, 'floatShares': 7421526384, 'sharesOutstanding': 7432377655, 'sharesShort': 48553497, 'sharesShortPriorMonth': 52344880, 'sharesShortPreviousMonthDate': 1760486400, 'dateShortInterest': 1763078400, 'sharesPercentSharesOut': 0.0064999997, 'heldPercentInsiders': 0.00067000004, 'heldPercentInstitutions': 0.75689006, 'shortRatio': 2.14, 'shortPercentOfFloat': 0.0064999997, 'impliedSharesOutstanding': 7433166379, 'bookValue': 48.84, 'priceToBook': 10.073915, 'lastFiscalYearEnd': 1751241600, 'nextFiscalYearEnd': 1782777600, 'mostRecentQuarter': 1759190400, 'earningsQuarterlyGrowth': 0.125, 'netIncomeToCommon': 104912003072, 'trailingEps': 14.08, 'forwardEps': 14.95, 'lastSplitFactor': '2:1', 'lastSplitDate': 1045526400, 'enterpriseToRevenue': 12.344, 'enterpriseToEbitda': 21.791, '52WeekChange': 0.14650738, 'SandP52WeekChange': 0.12934029, 'lastDividendValue': 0.91, 'lastDividendDate': 1763596800, 'quoteType': 'EQUITY', 'currentPrice': 492.01, 'targetHighPrice': 730.0, 'targetLowPrice': 483.0, 'targetMeanPrice': 625.4096, 'targetMedianPrice': 634.15, 'recommendationMean': 1.24561, 'recommendationKey': 'strong_buy', 'numberOfAnalystOpinions': 52, 'totalCash': 102012002304, 'totalCashPerShare': 13.725, 'ebitda': 166436995072, 'totalDebt': 120375001088, 'quickRatio': 1.254, 'currentRatio': 1.401, 'totalRevenue': 293812011008, 'debtToEquity': 33.154, 'revenuePerShare': 39.528, 'returnOnAssets': 0.14656, 'returnOnEquity': 0.32241002, 'grossProfits': 202037002240, 'freeCashflow': 53327376384, 'operatingCashflow': 147038994432, 'earningsGrowth': 0.127, 'revenueGrowth': 0.184, 'grossMargins': 0.68764, 'ebitdaMargins': 0.56646997, 'operatingMargins': 0.48873, 'financialCurrency': 'USD', 'symbol': 'MSFT', 'language': 'en-US', 'region': 'US', 'typeDisp': 'Equity', 'quoteSourceName': 'Nasdaq Real Time Price', 'triggerable': True, 'customPriceAlertConfidence': 'HIGH', 'hasPrePostMarketData': True, 'firstTradeDateMilliseconds': 511108200000, 'marketState': 'POST', 'shortName': 'Microsoft Corporation', 'longName': 'Microsoft Corporation', 'regularMarketChangePercent': 1.3408877, 'regularMarketPrice': 492.01, 'corporateActions': [], 'postMarketTime': 1764357505, 'regularMarketTime': 1764352802, 'exchange': 'NMS', 'messageBoardId': 'finmb_21835', 'exchangeTimezoneName': 'America/New_York', 'exchangeTimezoneShortName': 'EST', 'gmtOffSetMilliseconds': -18000000, 'market': 'us_market', 'esgPopulated': False, 'cryptoTradeable': False, 'postMarketChangePercent': 0.0060971887, 'postMarketPrice': 492.04, 'postMarketChange': 0.02999878, 'regularMarketChange': 6.51001, 'regularMarketDayRange': '486.65 - 492.63', 'fullExchangeName': 'NasdaqGS', 'averageDailyVolume3Month': 21881398, 'fiftyTwoWeekLowChange': 147.22, 'fiftyTwoWeekLowChangePercent': 0.42698455, 'fiftyTwoWeekRange': '344.79 - 555.45', 'fiftyTwoWeekHighChange': -63.440002, 'fiftyTwoWeekHighChangePercent': -0.114213705, 'fiftyTwoWeekChangePercent': 14.650738, 'dividendDate': 1765411200, 'earningsTimestamp': 1761768000, 'earningsTimestampStart': 1769634000, 'earningsTimestampEnd': 1769634000, 'earningsCallTimestampStart': 1761773400, 'earningsCallTimestampEnd': 1761773400, 'isEarningsDateEstimate': True, 'epsTrailingTwelveMonths': 14.08, 'epsForward': 14.95, 'epsCurrentYear': 16.18461, 'priceEpsCurrentYear': 30.399868, 'fiftyDayAverageChange': -18.911804, 'fiftyDayAverageChangePercent': -0.037015066, 'twoHundredDayAverageChange': 24.427155, 'twoHundredDayAverageChangePercent': 0.05224134, 'sourceInterval': 15, 'exchangeDataDelayedBy': 0, 'averageAnalystRating': '1.2 - Strong Buy', 'displayName': 'Microsoft', 'trailingPegRatio': 2.0613}
+
+
+=== Income Statement ===
+
+                                                      2025-06-30  ...    2022-06-30
+Tax Effect Of Unusual Items                        -7.708800e+07  ...  4.375400e+07
+Tax Rate For Calcs                                  1.760000e-01  ...  1.310000e-01
+Normalized EBITDA                                   1.606030e+11  ...  9.990500e+10
+Total Unusual Items                                -4.380000e+08  ...  3.340000e+08
+Total Unusual Items Excluding Goodwill             -4.380000e+08  ...  3.340000e+08
+Net Income From Continuing Operation Net Minori...  1.018320e+11  ...  7.273800e+10
+Reconciled Depreciation                             3.415300e+10  ...  1.446000e+10
+Reconciled Cost Of Revenue                          8.783100e+10  ...  6.265000e+10
+EBITDA                                              1.601650e+11  ...  1.002390e+11
+EBIT                                                1.260120e+11  ...  8.577900e+10
+Net Interest Income                                 2.620000e+08  ...  3.100000e+07
+Interest Expense                                    2.385000e+09  ...  2.063000e+09
+Interest Income                                     2.647000e+09  ...  2.094000e+09
+Normalized Income                                   1.021929e+11  ...  7.244775e+10
+Net Income From Continuing And Discontinued Ope...  1.018320e+11  ...  7.273800e+10
+Total Expenses                                      1.531960e+11  ...  1.148870e+11
+Total Operating Income As Reported                  1.285280e+11  ...  8.338300e+10
+Diluted Average Shares                              7.465000e+09  ...  7.540000e+09
+Basic Average Shares                                7.433000e+09  ...  7.496000e+09
+Diluted EPS                                         1.364000e+01  ...  9.650000e+00
+Basic EPS                                           1.370000e+01  ...  9.700000e+00
+Diluted NI Availto Com Stockholders                 1.018320e+11  ...  7.273800e+10
+Net Income Common Stockholders                      1.018320e+11  ...  7.273800e+10
+Net Income                                          1.018320e+11  ...  7.273800e+10
+Net Income Including Noncontrolling Interests       1.018320e+11  ...  7.273800e+10
+Net Income Continuous Operations                    1.018320e+11  ...  7.273800e+10
+Tax Provision                                       2.179500e+10  ...  1.097800e+10
+Pretax Income                                       1.236270e+11  ...  8.371600e+10
+Other Income Expense                               -5.163000e+09  ...  3.020000e+08
+Other Non Operating Income Expenses                -4.725000e+09  ... -3.200000e+07
+Special Income Charges                             -9.430000e+08  ... -1.010000e+08
+Write Off                                           9.430000e+08  ...  1.010000e+08
+Gain On Sale Of Security                            5.050000e+08  ...  4.350000e+08
+Net Non Operating Interest Income Expense           2.620000e+08  ...  3.100000e+07
+Interest Expense Non Operating                      2.385000e+09  ...  2.063000e+09
+Interest Income Non Operating                       2.647000e+09  ...  2.094000e+09
+Operating Income                                    1.285280e+11  ...  8.338300e+10
+Operating Expense                                   6.536500e+10  ...  5.223700e+10
+Research And Development                            3.248800e+10  ...  2.451200e+10
+Selling General And Administration                  3.287700e+10  ...  2.772500e+10
+Selling And Marketing Expense                       2.565400e+10  ...  2.182500e+10
+General And Administrative Expense                  7.223000e+09  ...  5.900000e+09
+Other Gand A                                        7.223000e+09  ...  5.900000e+09
+Gross Profit                                        1.938930e+11  ...  1.356200e+11
+Cost Of Revenue                                     8.783100e+10  ...  6.265000e+10
+Total Revenue                                       2.817240e+11  ...  1.982700e+11
+Operating Revenue                                   2.817240e+11  ...  1.982700e+11
+
+[47 rows x 4 columns]
+
+
+=== Balance Sheet ===
+
+                                                    2025-06-30  ...  2021-06-30
+Ordinary Shares Number                            7.434000e+09  ...         NaN
+Share Issued                                      7.434000e+09  ...         NaN
+Net Debt                                          1.290900e+10  ...         NaN
+Total Debt                                        6.058800e+10  ...         NaN
+Tangible Book Value                               2.013660e+11  ...         NaN
+...                                                        ...  ...         ...
+Cash Cash Equivalents And Short Term Investments  9.455500e+10  ...         NaN
+Other Short Term Investments                      6.431300e+10  ...         NaN
+Cash And Cash Equivalents                         3.024200e+10  ...         NaN
+Cash Equivalents                                  1.853100e+10  ...         NaN
+Cash Financial                                    1.171100e+10  ...         NaN
+
+[78 rows x 5 columns]
+
+
+=== Cash Flow ===
+
+                                                  2025-06-30  ...    2021-06-30
+Free Cash Flow                                  7.161100e+10  ...           NaN
+Repurchase Of Capital Stock                    -1.842000e+10  ...           NaN
+Repayment Of Debt                              -3.216000e+09  ...           NaN
+Issuance Of Debt                                0.000000e+00  ...           NaN
+Issuance Of Capital Stock                       2.056000e+09  ...           NaN
+Capital Expenditure                            -6.455100e+10  ...           NaN
+End Cash Position                               3.024200e+10  ...           NaN
+Beginning Cash Position                         1.831500e+10  ...           NaN
+Effect Of Exchange Rate Changes                 6.300000e+07  ...           NaN
+Changes In Cash                                 1.186400e+10  ...           NaN
+Financing Cash Flow                            -5.169900e+10  ...           NaN
+Cash Flow From Continuing Financing Activities -5.169900e+10  ...           NaN
+Net Other Financing Charges                    -2.291000e+09  ...           NaN
+Cash Dividends Paid                            -2.408200e+10  ...           NaN
+Common Stock Dividend Paid                     -2.408200e+10  ...           NaN
+Net Common Stock Issuance                      -1.636400e+10  ...           NaN
+Common Stock Payments                          -1.842000e+10  ...           NaN
+Common Stock Issuance                           2.056000e+09  ...           NaN
+Net Issuance Payments Of Debt                  -8.962000e+09  ...           NaN
+Net Short Term Debt Issuance                   -5.746000e+09  ...           NaN
+Short Term Debt Issuance                                 NaN  ...           NaN
+Net Long Term Debt Issuance                    -3.216000e+09  ...           NaN
+Long Term Debt Payments                        -3.216000e+09  ...           NaN
+Long Term Debt Issuance                         0.000000e+00  ...           NaN
+Investing Cash Flow                            -7.259900e+10  ...           NaN
+Cash Flow From Continuing Investing Activities -7.259900e+10  ...           NaN
+Net Other Investing Changes                     2.317000e+09  ...           NaN
+Net Investment Purchase And Sale               -4.387000e+09  ...           NaN
+Sale Of Investment                              2.538800e+10  ...           NaN
+Purchase Of Investment                         -2.977500e+10  ...           NaN
+Net Business Purchase And Sale                 -5.978000e+09  ...           NaN
+Purchase Of Business                           -5.978000e+09  ...           NaN
+Net PPE Purchase And Sale                      -6.455100e+10  ...           NaN
+Purchase Of PPE                                -6.455100e+10  ...           NaN
+Operating Cash Flow                             1.361620e+11  ...           NaN
+Cash Flow From Continuing Operating Activities  1.361620e+11  ...           NaN
+Change In Working Capital                      -5.350000e+09  ...           NaN
+Change In Other Working Capital                 5.400000e+09  ...           NaN
+Change In Other Current Liabilities             4.947000e+09  ...           NaN
+Change In Other Current Assets                 -5.994000e+09  ...           NaN
+Change In Payables And Accrued Expense          5.690000e+08  ...           NaN
+Change In Payable                               5.690000e+08  ...           NaN
+Change In Account Payable                       5.690000e+08  ...           NaN
+Change In Tax Payable                                    NaN  ... -2.309000e+09
+Change In Income Tax Payable                             NaN  ... -2.309000e+09
+Change In Inventory                             3.090000e+08  ...           NaN
+Change In Receivables                          -1.058100e+10  ...           NaN
+Changes In Account Receivables                 -1.058100e+10  ...           NaN
+Stock Based Compensation                        1.197400e+10  ...           NaN
+Unrealized Gain Loss On Investment Securities  -5.360000e+08  ...           NaN
+Asset Impairment Charge                         9.430000e+08  ...           NaN
+Deferred Tax                                   -7.056000e+09  ...           NaN
+Deferred Income Tax                            -7.056000e+09  ...           NaN
+Depreciation Amortization Depletion             3.415300e+10  ...           NaN
+Depreciation And Amortization                   3.415300e+10  ...           NaN
+Depreciation                                    3.415300e+10  ...           NaN
+Operating Gains Losses                          2.020000e+08  ...           NaN
+Gain Loss On Investment Securities              2.020000e+08  ...           NaN
+Net Income From Continuing Operations           1.018320e+11  ...           NaN
+
+[59 rows x 5 columns]
+
+
+=== Quarterly Financials ===
+
+                                                      2025-09-30  ...    2024-09-30
+Tax Effect Of Unusual Items                         1.871500e+08  ...  5.719000e+07
+Tax Rate For Calcs                                  1.900000e-01  ...  1.900000e-01
+Normalized EBITDA                                   4.707500e+10  ...  3.793300e+10
+Total Unusual Items                                 9.850000e+08  ...  3.010000e+08
+Total Unusual Items Excluding Goodwill              9.850000e+08  ...  3.010000e+08
+Net Income From Continuing Operation Net Minori...  2.774700e+10  ...  2.466700e+10
+Reconciled Depreciation                             1.306100e+10  ...  7.383000e+09
+Reconciled Cost Of Revenue                          2.404300e+10  ...  2.009900e+10
+EBITDA                                              4.806000e+10  ...  3.823400e+10
+EBIT                                                3.499900e+10  ...  3.085100e+10
+Net Interest Income                                 2.780000e+08  ...  9.900000e+07
+Interest Expense                                    6.980000e+08  ...  5.820000e+08
+Interest Income                                     9.760000e+08  ...  6.810000e+08
+Normalized Income                                   2.694915e+10  ...  2.442319e+10
+Net Income From Continuing And Discontinued Ope...  2.774700e+10  ...  2.466700e+10
+Total Expenses                                      3.971200e+10  ...  3.503300e+10
+Total Operating Income As Reported                  3.796100e+10  ...  3.055200e+10
+Diluted Average Shares                              7.466000e+09  ...  7.470000e+09
+Basic Average Shares                                7.433000e+09  ...  7.433000e+09
+Diluted EPS                                         3.720000e+00  ...  3.300000e+00
+Basic EPS                                           3.730000e+00  ...  3.320000e+00
+Diluted NI Availto Com Stockholders                 2.774700e+10  ...  2.466700e+10
+Net Income Common Stockholders                      2.774700e+10  ...  2.466700e+10
+Net Income                                          2.774700e+10  ...  2.466700e+10
+Net Income Including Noncontrolling Interests       2.774700e+10  ...  2.466700e+10
+Net Income Continuous Operations                    2.774700e+10  ...  2.466700e+10
+Tax Provision                                       6.554000e+09  ...  5.602000e+09
+Pretax Income                                       3.430100e+10  ...  3.026900e+10
+Other Income Expense                               -3.938000e+09  ... -3.820000e+08
+Other Non Operating Income Expenses                -4.923000e+09  ... -6.830000e+08
+Special Income Charges                             -1.400000e+07  ... -7.000000e+06
+Write Off                                           1.400000e+07  ...  7.000000e+06
+Gain On Sale Of Security                            9.990000e+08  ...  3.080000e+08
+Net Non Operating Interest Income Expense           2.780000e+08  ...  9.900000e+07
+Interest Expense Non Operating                      6.980000e+08  ...  5.820000e+08
+Interest Income Non Operating                       9.760000e+08  ...  6.810000e+08
+Operating Income                                    3.796100e+10  ...  3.055200e+10
+Operating Expense                                   1.566900e+10  ...  1.493400e+10
+Research And Development                            8.146000e+09  ...  7.544000e+09
+Selling General And Administration                  7.523000e+09  ...  7.390000e+09
+Selling And Marketing Expense                       5.717000e+09  ...  5.717000e+09
+General And Administrative Expense                  1.806000e+09  ...  1.673000e+09
+Other Gand A                                        1.806000e+09  ...  1.673000e+09
+Gross Profit                                        5.363000e+10  ...  4.548600e+10
+Cost Of Revenue                                     2.404300e+10  ...  2.009900e+10
+Total Revenue                                       7.767300e+10  ...  6.558500e+10
+Operating Revenue                                   7.767300e+10  ...  6.558500e+10
+
+[47 rows x 5 columns]
+
