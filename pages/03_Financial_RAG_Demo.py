@@ -10,23 +10,31 @@ EMBED_MODEL = "text-embedding-3-small"
 CHAT_MODEL = "gpt-4o-mini"                 # change if you want
 
 # ========== OPENAI CLIENT ==========
+@st.cache_resource
 def get_openai_client():
+    """Get OpenAI client with proper secret handling."""
+    # Check environment variable first
     api_key = os.getenv("OPENAI_API_KEY")
-    if api_key is None and "OPENAI_API_KEY" in st.secrets:
-        api_key = st.secrets["OPENAI_API_KEY"]
+    
+    # Then check secrets (matching your LLM_Eval_2.py pattern)
+    if api_key is None:
+        try:
+            api_key = st.secrets["api_keys"].get("OPENAI_API_KEY")
+        except Exception:
+            pass
+    
     if not api_key:
         st.error(
             "OPENAI_API_KEY not set.\n\n"
-            "Set it as an environment variable or add it to .streamlit/secrets.toml."
+            "Add it to .streamlit/secrets.toml under [api_keys] section."
         )
         st.stop()
     return OpenAI(api_key=api_key)
 
-client = get_openai_client()
-
 # ========== EMBEDDING HELPERS ==========
 def embed_texts(texts, model=EMBED_MODEL, batch_size=64):
     """Embed a list of texts using OpenAI embeddings; returns (N, D) array."""
+    client = get_openai_client()  # Get client inside function
     embeddings = []
     for i in range(0, len(texts), batch_size):
         batch = texts[i : i + batch_size]
@@ -97,6 +105,7 @@ def retrieve(query, docs, metadatas, embeddings, k=5):
 
 # ========== LLM ANSWERS ==========
 def answer_no_rag(question: str) -> str:
+    client = get_openai_client()  # Get client inside function
     messages = [
         {
             "role": "system",
@@ -120,6 +129,7 @@ def answer_no_rag(question: str) -> str:
 
 
 def answer_with_rag(question: str, retrieved_chunks) -> str:
+    client = get_openai_client()  # Get client inside function
     context_parts = []
     for item in retrieved_chunks:
         ticker = item["meta"]["ticker"]
